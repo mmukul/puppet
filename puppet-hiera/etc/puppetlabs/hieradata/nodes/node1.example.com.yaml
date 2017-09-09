@@ -1,0 +1,10 @@
+---
+ntp::restrict:
+  -
+ntp::autoupdate: false
+ntp::package_ensure: latest
+ntp::service_enable: true
+ntp::service_ensure: running
+ntp::servers:
+  - ntp0.example.com iburst
+  - ntp1.example.com iburst

@@ -1,0 +1,14 @@
+---
+:backends:
+  - yaml
+  - puppet
+  
+:hierarchy:
+  - "nodes/%{::trusted.certname}"
+  - common
+  
+:yaml:
+  :datadir: "/etc/puppetlabs/hieradata"
+  
+:puppet:
+  :datasource: data
