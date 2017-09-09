@@ -1,3 +1,7 @@
-<% [ntpservers].flatten.each do |server| -%>
-server <%= server %>
-<% end -%>
+
+ServerRoot "/etc/httpd"
+PidFile run/httpd.pid
+Listen 80
+Include conf.d/*.conf
+User apache
+Group apache

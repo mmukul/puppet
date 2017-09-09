@@ -14,12 +14,10 @@ class apache (
 
   file { '/var/www/puppetweb/index.html':
      ensure  => file,
-     content => "Index HTML Is Managed By Puppet",
      mode    => '0644',
+	 source => 'puppet:///modules/apache/index.html',
 	 require => File['/var/www/puppetweb'],
 	}
-  
-    #content => template('apache/apache.conf.erb')
    
   service {'httpd':
     ensure => running,
