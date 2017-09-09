@@ -1,6 +1,8 @@
-# lookup ntpservers from hiera, or allow user of class to provide other value
+# lookup ntpservers from hiera
+
 class ntp::config($ntpservers = hiera('ntpservers')) {
-  file{'/tmp/ntp.conf':
+  file{'/etc/ntp.conf':
+    ensure  => file,
     content => template('ntp/ntp.conf.erb')
   }
 }
